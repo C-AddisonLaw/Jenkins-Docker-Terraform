@@ -1,0 +1,40 @@
+{
+    "variables": {
+        "aws_access_key": "",
+        "aws_secret_key": "",
+        "profile": ""
+    },
+    "builders": [{
+        "type": "amazon-ebs",
+        "access_key": "{{user `aws_access_key`}}",
+        "secret_key": "{{user `aws_secret_key`}}",
+        "profile": "{{user `profile`}}",
+        "region": "us-west-2",
+        "source_ami_filter": {
+          "filters": {
+            "virtualization-type": "hvm",
+            "product-code": "aw0evgkw8e5c1q413zgy5pjce",
+            "root-device-type": "ebs"
+           },
+            "owners": ["aws-marketplace"],
+            "most_recent": true
+        },
+        "instance_type": "t3.micro",
+        "ssh_username": "centos",
+        "ami_name": "Jenkins-Docker-{{timestamp}}"
+    }],
+    "Provisioners": [
+        {
+            "type": "shell",
+            "inline": [
+                "sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm",
+                "sudo yum install -y python docker wget"
+            ]
+        },
+        {
+            "type": "file",
+            "source": "bootstrap",
+            "destination": "/tmp/"
+        }
+    ]
+}
