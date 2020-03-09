@@ -26,3 +26,9 @@ $ terraform init
 $ terraform plan
 $ terraform apply
 ```
+
+### Jenkins
+
+  - Access jenkins with https://<EC2_Public_DNS_NAME>:8080
+  - One can add more required plugins to packer/bootstrap/plugins.txt file to pre-configure the jenkins with that plugin
+  - One can change usename/password to login to jenkins by changing "hudsonRealm.createAccount("admin", "admin")" entry in packer/bootstrap/security.groovy file
