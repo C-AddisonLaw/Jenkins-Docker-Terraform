@@ -8,7 +8,7 @@ variable "shared_credentials_file" {
 }
 
 variable "ami" {
-  default =  "ami-0be846b6f22115cc2"
+  default =  "ami-0d732e3e83db946c7"
 }
 
 variable "key_path" {
@@ -20,6 +20,6 @@ output "Jenkins_public_DNS" {
   value = aws_instance.Jenkins.public_dns
 }
 
-output "Jenkins_public_DNS" {
+output "Jenkins_public_IP" {
   value = aws_instance.Jenkins.public_ip
 }
