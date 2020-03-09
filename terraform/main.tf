@@ -4,6 +4,7 @@ provider "aws" {
   shared_credentials_file = var.shared_credentials_file
 }
 
+## SG for 8080 port to access Jenkins Dashboard
 resource "aws_security_group_rule" "allow_8080" {
   type            = "ingress"
   from_port       = 8080
@@ -13,13 +14,13 @@ resource "aws_security_group_rule" "allow_8080" {
   security_group_id = "sg-4be4a238"
 }
 
-# Define SSH key pair for our instances
+## Define SSH key pair for our instances
 resource "aws_key_pair" "default" {
   key_name = "jenkins"
   public_key = file(var.key_path)
 }
 
-# Define server1
+## Define Jenkins server
 resource "aws_instance" "Jenkins" {
   ami = var.ami
   instance_type = "t3.micro"
