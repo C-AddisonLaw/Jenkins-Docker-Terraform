@@ -23,7 +23,7 @@ wget --no-check-certificate --content-disposition https://raw.githubusercontent.
 wget --no-check-certificate --content-disposition https://raw.githubusercontent.com/yogeshvk1209/jenkins_setup/master/packer/bootstrap/security.groovy --output-document=security.groovy
 
 echo "Building Docker Image"
-docker build -t jcasc-demo /opt/bootstrap/
+docker build -t jenkins-demo /opt/bootstrap/
 
 sleep 60
 echo "Running Jenkins Docker container"
