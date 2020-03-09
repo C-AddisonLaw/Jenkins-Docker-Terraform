@@ -7,7 +7,7 @@ variable "shared_credentials_file" {
 }
 
 variable "ami" {
-  default =  "ami-067a8d21baaf68acd"
+  default =  "ami-0b4adf7fa592c5237"
 }
 
 variable "key_path" {

@@ -18,10 +18,10 @@ systemctl restart docker
 
 echo "Downloading Files from git"
 cd /opt/bootstrap/
-wget --no-check-certificate --content-disposition https://raw.githubusercontent.com/yogeshvk1209/CICD/master/jenkins_docker/packer/bootstrap/Dockerfile --output-document=Dockerfile
-wget --no-check-certificate --content-disposition https://raw.githubusercontent.com/yogeshvk1209/CICD/master/jenkins_docker/packer/bootstrap/plugins.txt --output-document=plugins.txt
-wget --no-check-certificate --content-disposition https://raw.githubusercontent.com/yogeshvk1209/CICD/master/jenkins_docker/packer/bootstrap/jenkins.yaml --output-document=jenkins.yaml
-wget --no-check-certificate --content-disposition https://raw.githubusercontent.com/yogeshvk1209/CICD/master/jenkins_docker/packer/bootstrap/security.groovy --output-document=security.groovy
+wget --no-check-certificate --content-disposition https://raw.githubusercontent.com/yogeshvk1209/jenkins_setup/master/packer/bootstrap/Dockerfile --output-document=Dockerfile
+wget --no-check-certificate --content-disposition https://raw.githubusercontent.com/yogeshvk1209/jenkins_setup/master/packer/bootstrap/plugins.txt --output-document=plugins.txt
+wget --no-check-certificate --content-disposition https://raw.githubusercontent.com/yogeshvk1209/jenkins_setup/master/packer/bootstrap/jenkins.yaml --output-document=jenkins.yaml
+wget --no-check-certificate --content-disposition https://raw.githubusercontent.com/yogeshvk1209/jenkins_setup/master/packer/bootstrap/security.groovy --output-document=security.groovy
 
 echo "Building Docker Image"
 docker build -t jcasc-demo /opt/bootstrap/
