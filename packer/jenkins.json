@@ -13,14 +13,14 @@
         "source_ami_filter": {
           "filters": {
             "virtualization-type": "hvm",
-            "product-code": "aw0evgkw8e5c1q413zgy5pjce",
+            "name": "amzn2-ami-ecs-hvm-*-x86_64-ebs",
             "root-device-type": "ebs"
            },
-            "owners": ["aws-marketplace"],
+            "owners": ["591542846629"],
             "most_recent": true
         },
         "instance_type": "t3.micro",
-        "ssh_username": "centos",
+        "ssh_username": "ec2-user",
         "ami_name": "Jenkins-Docker-{{timestamp}}"
     }],
     "Provisioners": [
@@ -28,9 +28,7 @@
             "type": "shell",
             "inline": [
                 "sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm",
-                "sudo yum remove -y docker docker-common docker-engine"
-                "sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo"
-                "sudo yum install -y python docker wget docker-ce docker-ce-cli containerd.io"
+                "sudo yum install -y python wget"
             ]
         },
         {
