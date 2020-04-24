@@ -2,15 +2,15 @@
 set -x
 echo "Enabling and Changing Docker permissions"
 systemctl enable docker
-systemctl start docker
-usermod -a -G dockerroot centos
+groupadd docker
+usermod -a -G docker ec2-user
 
 echo "Modifying /etc/docker/daemon.json for dockerroot for centos user"
 echo > /etc/docker/daemon.json
 tee -a /etc/docker/daemon.json > /dev/null <<EOT
 {
     "live-restore": true,
-    "group": "dockerroot"
+    "group": "docker"
 }
 EOT
 

@@ -60,7 +60,6 @@ resource "aws_instance" "Jenkins" {
   ami = data.aws_ami.latest-jenkins.id
   instance_type = "t3.micro"
   key_name = aws_key_pair.default.id
-  #security_groups = [aws_security_group.instancesg.id]
   vpc_security_group_ids = [aws_security_group.instancesg.id]
 
   user_data = file("bootstrap.sh")
