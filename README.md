@@ -34,3 +34,6 @@ $ terraform apply
   - One can add more required plugins to packer/bootstrap/plugins.txt file to pre-configure the jenkins with that plugin
   - One can change usename/password to login to jenkins by changing "hudsonRealm.createAccount("admin", "admin")" entry in packer/bootstrap/security.groovy file
   - Additional jobs can be added by adding jobs config.xml under the folder packer/bootstrap/jobs/<job_name>
+
+
+P.S: Docker build may take 2-5 mins (or longer) as it needs to download all the latest plugins (mentioned in plugins.txt). Keep an eye on /var/log/bootstrap.log file to see if bootstrapng has completed successfully
