@@ -108,3 +108,6 @@ matrix-auth
 pam-auth
 ldap
 email-ext
+docker-java-api
+docker-plugin
+yet-another-docker-plugin
