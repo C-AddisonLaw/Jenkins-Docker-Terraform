@@ -20,7 +20,7 @@ echo "Downloading Files from git"
 cd /opt/bootstrap/
 wget --no-check-certificate --content-disposition -O /opt/bootstrap/master/Dockerfile  https://raw.githubusercontent.com/yogeshvk1209/jenkins_setup/master/packer/bootstrap/master/Dockerfile
 wget --no-check-certificate --content-disposition -O /opt/bootstrap/master/plugins.txt https://raw.githubusercontent.com/yogeshvk1209/jenkins_setup/master/packer/bootstrap/master/plugins.txt
-wget --no-check-certificate --content-disposition -O /opt/bootstrap/master/security.groovy https://raw.githubusercontent.com/yogeshvk1209/jenkins_setup/master/packer/bootstrap/security.groovy
+wget --no-check-certificate --content-disposition -O /opt/bootstrap/master/security.groovy https://raw.githubusercontent.com/yogeshvk1209/jenkins_setup/master/packer/bootstrap/master/security.groovy
 wget --no-check-certificate --content-disposition -O /opt/bootstrap/slave/Dockerfile  https://raw.githubusercontent.com/yogeshvk1209/jenkins_setup/master/packer/bootstrap/slave/Dockerfile
 
 echo "Building jenkins master Docker Image"
